@@ -6,9 +6,9 @@
 
 ### Visiteur
 
-- [ ] voir la page d'accueil
-- [ ] S'inscrire
-- [ ] Se Connecter
+- [x] voir la page d'accueil
+- [x] S'inscrire
+- [x] Se Connecter
 - [ ] lire le forum
 
 ### Le Membre
@@ -73,8 +73,10 @@
 - [ ] page registration
 - [ ] page login
 - [ ] page d'accueil
-- [ ] page profil membre
-- [ ] dashboard admin
+- [ ] access page profil membre
+- [x] access dashboard admin
+- [ ] template page profil membre
+- [x] template dashboard admin
 
 ### lot 2
 
