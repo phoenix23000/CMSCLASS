@@ -13,7 +13,7 @@
 
 ### Le Membre
 
-Action du visiteur .
+**__Action du visiteur.__**
 
 #### pour le forum
 
@@ -118,13 +118,25 @@ Action du visiteur .
 
 ## rapport du mercredi
 
+### JALON du 30 Octobre 2019
+
 Date | Lot | % réalisation |
 ------------ | ------------- | ---------- |
-30/09/2019 | lot 1 | 0%|
-30/09/2019 | lot 2 | 0%|
-30/09/2019 | lot 3 | 0%|
-30/09/2019 | lot 4 | 0%|
-30/09/2019 | lot 5 | 0%|
+30/09/2019 | lot 1 | 100%|
+30/09/2019 | lot 2 | 100%|
+30/09/2019 | lot 3 | 25%|
+30/09/2019 | lot 4 | 25%|
+30/09/2019 | lot 5 | 25%|
+
+### JALON du 31 Octobre 2019
+
+Date | Lot | % réalisation |
+------------ | ------------- | ---------- |
+31/09/2019 | lot 1 | 100%|
+31/09/2019 | lot 2 | 100%|
+31/09/2019 | lot 3 | 100%|
+31/09/2019 | lot 4 | 100%|
+31/09/2019 | lot 5 | 75%|
 
 ## Question
 

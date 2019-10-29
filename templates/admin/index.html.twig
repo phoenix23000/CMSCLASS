@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block sidebarAdmin %}
+{% if is_granted('ROLE_ADMIN') %}
+  <nav class="sidebar flft">
+    <ul>
+      <li>
+        <a href="Home">
+          <span class="fas fa-home"></span>
+            Home
+        </a>
+      </li>
+    {% if is_granted('ROLE_ADMIN') %}
+      <li class="{% if mainNavMember is defined %}active{% endif %}">
+        <a href="{{path('member_homepage')}}">
+          <span class="fas fa-home"></span>
+            Espace membre
+        </a>
+      </li>
+    {% endif %}
+      <li>
+        <a href="">
+          <span class="fas fa-users"></span>
+            Users
+        </a>
+        <ul>
+          <li>
+            <a href="{{path('listingUsers')}}">
+            <span class="fas fa-list-alt"></span>
+              Lister
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span class="fas fa-plus"></span>
+                Ajouter
+            </a>
+        </ul>
+      </li>
+      <li>
+        <a href="">
+          <span class="fas fa-home"></span>
+            12345
+        </a>
+      </li>
+    </ul>
+  </nav >
+{% endif %}
+{% endblock %} 
+
+
+
+
+
+
+{% block body %}
+
+<section class="adminContent wordwrap flft">
+  <h1>Salut admin !!</h1>
+</section>
+{% endblock %}

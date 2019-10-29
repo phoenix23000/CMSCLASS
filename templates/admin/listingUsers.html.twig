@@ -1,0 +1,122 @@
+{% extends "base.html.twig" %}
+
+{% block sidebarAdmin %}
+{% if is_granted('ROLE_ADMIN') %}
+<nav class="sidebar flft">
+<ul>
+    <li>
+    <a href="Home">
+        <span class="fas fa-home"></span>
+        Home
+    </a>
+    </li>
+    {% if is_granted('ROLE_ADMIN') %}
+        <li class="{% if mainNavMember is defined %}active{% endif %}">
+        <a href="{{path('member_homepage')}}">
+            <span class="fas fa-home"></span>
+            Espace membre
+        </a>
+        </li>
+    {% endif %}
+    <li>
+    <a href="">
+        <span class="fas fa-users"></span>
+        Users
+    </a>
+        <ul>
+            <li>
+                <a href="{{path('listingUsers')}}">
+                    <span class="fas fa-list-alt"></span>
+                        Lister
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="fas fa-plus"></span>
+                    Ajouter
+                </a>
+            </li>
+        </ul>
+    </li>
+        {% if is_granted('ROLE_USER') %}
+            <li class="{% if mainNavLogin is defined %}active{% endif %}">
+                <a href="{{path('logout')}}">
+                    <span class="fas fa-home"></span>
+                    Déconnexion
+                </a>
+            </li>
+        {% else %}
+            <li class="{% if mainNavLogin is defined %}active{% endif %}">
+                <a href="{{path('login')}}">Connexion</a>
+            </li>
+            <li class="{% if mainNavRegistration is defined %}active{% endif %}">
+                <a href="{{path('inscription')}}">Inscription</a>
+            </li>
+        {% endif %}
+</ul>
+</nav >
+{% endif %}
+{% endblock %} 
+
+{% block body %}
+
+<section class="adminContent wordwrap flft">
+    <h1>Users Listing</h1>
+<table  class="table-responsive" >
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                email
+            </th>
+            <th>
+                pseudo
+            </th>
+            <th>
+                Ip
+            </th>
+            <th>
+                créer le
+            </th>
+            <th>
+                last connection
+            </th>
+            <th>
+                profil
+            </th>
+            <th>
+                suprimer
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for users in user %}
+        <tr>
+            <td data-label ="id">{{ users.id }}</td>
+            <td data-label ="username">{{ users.email }}</td>
+            <td data-label ="pseudo">{{ users.pseudo }}</td>
+            <td data-label ="ip">{{ users.ipad }}</td>
+            <td data-label ="créer le">{{ users.createdAt |  date('d M Y à H:i')}}</td>
+            <td data-label ="last connection">{{ users.lastconnect |  date('d M Y à H:i') }}</td>
+            <td data-label ="profile"> <a class="btnn btn-profil" href="" >Profile</a> </td>
+            <td data-label ="suprimer"> <a class="btnn btn-supprim" href="" >suprimer</a> </td>
+            
+        </tr> 
+    {% endfor %}       
+    </tbody>
+</table>
+
+
+
+
+
+
+</section>
+{% endblock %}
+
+
+{% block javascripts %}
+<script src="/dist/js/app.js" async ></script>
+{% endblock %}

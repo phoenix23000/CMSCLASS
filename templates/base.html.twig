@@ -1,12 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>
+            {% block title %}
+                {% if title is defined %}{{title}}{% else %}Title{% endif %} | GAMES FAUCET
+            {% endblock %}
+        </title>
+        {% block stylesheets %}
+            {# bootstrap #}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            {# custom #}
+            <link rel="stylesheet" href="/dist/css/style.css">
+            <script src="https://kit.fontawesome.com/96b3e2d7ff.js"></script>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <body id="{% block body_id %}{% endblock %}">
+
+        {% block header %}
+            
+            
+        {% endblock %} 
+        
+        {% block nav %}
+        {% endblock %}
+
+        {% block sidebarAdmin %}
+        {% endblock %} 
+
+        {% block flash %}
+            {% for flash_message in app.session.flashbag.get('success') %}
+                <div class="container alert alert-success" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('info') %}
+                <div class="container alert alert-info" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('warning') %}
+                <div class="container alert alert-warning" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('danger') %}
+                <div class="container alert alert-danger" role="alert">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+
+
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
