@@ -128,4 +128,4 @@ Date | Lot | % réalisation |
 
 ## Question
 
-- [ ] les session de chat seront elle toujours ouverte ?
+- [ ] les session de Tchat seront elle toujours ouverte ?
