@@ -62,18 +62,14 @@ class User implements UserInterface, \Serializable {
     /**
      * @ORM\Column(type="datetime")
      */
-    private $createdAt;
+    private $createAt;
 
     /**
      * @ORM\Column(type="datetime")
      */
     private $lastconnect;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $ipad;
-    
+
     public function __construct() {
         $this->isActive = true;
         // may not be needed, see section on salt below
@@ -180,16 +176,15 @@ class User implements UserInterface, \Serializable {
 
         return $this;
     }
-    
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreateAt(): ?\DateTimeInterface
     {
-        return $this->createdAt;
+        return $this->createAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    public function setCreateAt(\DateTimeInterface $createAt): self
     {
-        $this->createdAt = $createdAt;
+        $this->createAt = $createAt;
 
         return $this;
     }
@@ -207,23 +202,5 @@ class User implements UserInterface, \Serializable {
     }
 
 
-    /**
-     * Get the value of idpad
-     */ 
-    public function getIpad()
-    {
-        return $this->ipad;
-    }
 
-    /**
-     * Set the value of ipad
-     *
-     * @return  self
-     */ 
-    public function setIpad($ipad)
-    {
-        $this->ipad = $ipad;
-
-        return $this;
-    }
 }

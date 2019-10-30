@@ -26,9 +26,9 @@ class RegistrationController extends AbstractController {
             $user->setPassword($password);
             //on active par défaut
             $user->setIsActive(true);
-            $user->addRole("ROLE_USER");
+            $user->addRole("ROLE_ADMIN");
             //date de creation
-            $user->setCreatedAt(new \DateTime(('@'.strtotime('now'))));
+            $user->setCreateAt(new \DateTime(('@'.strtotime('now'))));
             $user->setLastconnect(new \DateTime(('@'.strtotime('now'))));
 
 
